@@ -4,7 +4,7 @@ spring:
   cloud:
     config:
       uri: ${CONFIG_SERVER_URI:http://f1-config-server-test:8080}
-      fail-fast: false
+      fail-fast: true
       token: ${VAULT_TOKEN:}
       # Set label to empty string to prevent /master from being appended
       label: ""
