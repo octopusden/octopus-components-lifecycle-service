@@ -65,6 +65,10 @@ tasks.named('test') {
     useJUnitPlatform()
 }
 
+tasks.withType(JavaCompile).configureEach {
+    options.compilerArgs += ['-parameters']
+}
+
 // Docker configuration - matches msc/build.gradle.kts pattern
 ext {
     // Support both property name formats
@@ -90,4 +94,3 @@ docker {
 tasks.named('jar') {
     enabled = false
 }
-

@@ -26,7 +26,7 @@ public class BuildParser {
         return str.substring(str.indexOf("=") + 1, str.lastIndexOf("."));
     }
 
-    @Cacheable(value = "BuildParser-parse", key = "#str", unless = "#str == null")
+    @Cacheable(value = "BuildParser-parse", key = "#p0", condition = "#p0 != null")
     public List<Build> parse(String str) {
         List<Build> outList = new ArrayList<>();
 
